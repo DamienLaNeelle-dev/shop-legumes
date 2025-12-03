@@ -9,4 +9,20 @@ import { LegumeListComponent } from '../legume-list/legume-list.component';
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
 })
-export class ShopComponent {}
+export class ShopComponent {
+  legumes: any[] = [];
+  selectedCategoryId: number | null = null;
+  legumeCount: number = 0;
+
+  get count(): number {
+    return this.legumes.length;
+  }
+
+  onCategorySelected(id: number) {
+    this.selectedCategoryId = id;
+  }
+
+  onLegumeCountChanged(count: number) {
+    this.legumeCount = count;
+  }
+}

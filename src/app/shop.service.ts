@@ -16,4 +16,12 @@ export class ShopService {
   getLegumes() {
     return this.http.get<any[]>(`${this.api}/legumes`);
   }
+
+  getLegumesByCat(categoryId: number) {
+    return this.http.get<any[]>(`${this.api}/legumes?categoryId=${categoryId}`);
+  }
+
+  updateLegume(legume: any) {
+    return this.http.put(`${this.api}/legumes/${legume.id}`, legume);
+  }
 }

@@ -1,19 +1,18 @@
 {
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Racines"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Feuilles"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Fruits"
     }
   ],
-
   "legumes": [
     {
       "id": "1",
@@ -24,19 +23,19 @@
     {
       "id": "2",
       "name": "Betterave",
-      "price": 3,
+      "price": 3.45,
       "categoryId": 1
     },
     {
       "id": "3",
       "name": "Salade",
-      "price": 1.5,
+      "price": 0.99,
       "categoryId": 2
     },
     {
       "id": "4",
       "name": "Tomate",
-      "price": 6,
+      "price": 3.5,
       "categoryId": 3
     }
   ]

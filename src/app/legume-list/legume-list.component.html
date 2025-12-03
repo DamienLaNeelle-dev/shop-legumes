@@ -4,7 +4,78 @@
     <div class="card shadow-sm">
       <div class="card-body">
         <div>{{ legume.name }} - {{ legume.price }} €</div>
-        <button class="btn btn-success btn-sm">Ajouter</button>
+        <button class="btn btn-success btn-sm mt-2">Ajouter</button>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-primary mt-2"
+          style="margin-left: 5px"
+          (click)="startEdit(legume, $index)"
+          data-bs-toggle="modal"
+          data-bs-target="#editLegumeModal"
+        >
+          Modifier
+        </button>
+        <!-- Modal pour modifier un legume -->
+        <div
+          class="modal fade"
+          id="editLegumeModal"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Modifier un legume</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form #editForm="ngForm" (ngSubmit)="submitEdit(editForm)">
+                  <div class="mb-3">
+                    <label class="form-label">Nom</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      [(ngModel)]="editingLegume.name"
+                      name="name"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Prix (€)</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      [(ngModel)]="editingLegume.price"
+                      name="price"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Categorie (ID)</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      [(ngModel)]="editingLegume.categoryId"
+                      name="categoryId"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-success"
+                    data-bs-dismiss="modal"
+                  >
+                    Enregistrer
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
